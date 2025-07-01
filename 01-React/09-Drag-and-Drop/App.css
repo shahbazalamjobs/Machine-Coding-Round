@@ -1,0 +1,63 @@
+/*  1) advance drag and drop  */
+
+/* .dnd-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  font-family: sans-serif;
+}
+
+.dnd-list {
+  width: 220px;
+  min-height: 250px;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #f9f9f9;
+}
+
+.dnd-list h4 {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.dnd-item {
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+  cursor: grab;
+  transition: background-color 0.2s;
+}
+
+.dnd-item:hover {
+  background-color: #c0c0c0;
+} */
+
+
+
+
+
+/* 2) Simple Drag and drop */
+
+.dnd-list {
+  width: 300px;
+  margin: 50px auto;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.dnd-list-item {
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: grab;
+  transition: background 0.2s;
+}
+
+.dnd-list-item:hover {
+  background-color: #e0e0e0;
+}
