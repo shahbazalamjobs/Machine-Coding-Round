@@ -1,0 +1,70 @@
+
+.App {
+  font-family: Arial, sans-serif;
+  padding: 30px;
+  max-width: 700px;
+  margin: auto;
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.new-comment textarea {
+  width: 100%;
+  min-height: 60px;
+  padding: 10px;
+  margin-bottom: 10px;
+  resize: vertical;
+}
+
+.new-comment button {
+  padding: 8px 16px;
+  background-color: #5c6bc0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.comment {
+  margin-top: 20px;
+  padding-left: 10px;
+  border-left: 2px solid #ccc;
+}
+
+.comment p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.comment-actions {
+  margin-top: 4px;
+}
+
+.comment-actions button {
+  background: none;
+  border: none;
+  color: #5c6bc0;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.reply-box textarea,
+.comment-edit textarea {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  resize: vertical;
+  min-height: 50px;
+}
+
+.reply-box button,
+.comment-edit button {
+  margin-top: 5px;
+  padding: 6px 12px;
+  background-color: #5c6bc0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
