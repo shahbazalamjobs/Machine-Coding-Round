@@ -15,101 +15,214 @@ body {
   height: 100vh;
 }
 
+
+/* App.css */
+
 .timer-container {
-  background-color: #ffffff;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 100%;
-  max-width: 420px;
-}
-
-.timer-heading {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.timer-display {
-  font-size: 48px;
-  font-weight: bold;
-  margin: 20px 0;
-  color: #2b2b2b;
-}
-
-.input-form {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 12px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-
-.input-group {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: #f0f4f8;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
 }
 
-.input-group label {
-  font-size: 14px;
-  margin-bottom: 4px;
-  color: #555;
+.timer-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-.input-form input {
-  width: 60px;
-  padding: 10px;
-  font-size: 16px;
+.timer-form {
+  margin-bottom: 1rem;
+}
+
+.timer-form input {
+  width: 100px;
+  padding: 0.5rem;
+  font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 4px;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.timer-form input:focus {
+  outline: none;
+  border-color: #a761f1;
+  box-shadow: 0 0 5px rgba(167, 97, 241, 0.5);
+}
+
+.timer {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.timer-btns {
+  display: flex;
+  gap: 1rem;
+}
+
+.timer-btns button {
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #a761f1;
+  color: #fff;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.timer-btns button:hover {
+  background-color: #8e4dc9;
+}
+
+.timer-btns button:active {
+  transform: scale(0.97);
+}
+
+.timer-btns button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+/* App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #eef2f5;
+  font-family: Arial, sans-serif;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.timer-container {
   text-align: center;
 }
 
-.set-btn {
-  padding: 10px 16px;
-  background-color: #10b981;
-  color: white;
+.timer-container h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.timer-form input {
+  width: 80px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.timer {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+.timer-btns button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 4px;
+  background: #6200ea;
+  color: #fff;
   cursor: pointer;
-  height: 48px;
-  align-self: center;
-  transition: background-color 0.3s ease;
 }
 
-.set-btn:hover {
-  background-color: #059669;
+.timer-btns button:hover {
+  background: #4500b5;
 }
 
-.timer-buttons {
+
+
+
+
+/* 2nd date timer */
+
+/*
+
+.App {
   display: flex;
-  gap: 15px;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background: #f5f7fa;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #333;
 }
 
-.btn {
-  padding: 12px 24px;
-  font-size: 16px;
+.App h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.date-input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.start-button {
+  padding: 0.5rem 1rem;
+  background: #4a90e2;
+  color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 0.25rem;
+  font-size: 1rem;
   cursor: pointer;
-  background-color: #4f46e5;
-  color: #ffffff;
-  transition: background-color 0.3s ease;
+  transition: opacity 0.2s;
+}
+.start-button:hover {
+  opacity: 0.85;
 }
 
-.btn:hover {
-  background-color: #4338ca;
+.timer {
+  display: flex;
+  gap: 1rem;
 }
 
-.reset {
-  background-color: #ef4444;
+.time-segment {
+  background: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  min-width: 4.5rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.reset:hover {
-  background-color: #dc2626;
+.time {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
 }
+
+.label {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.expired {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: #e74c3c;
+} */
