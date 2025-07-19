@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import './App.css'
 
 function App() {
   const [isRunning, setIsRunning] = useState(false);
@@ -84,3 +85,89 @@ function App() {
 }
 
 export default App;
+
+
+
+// 2nd date timer
+
+
+// import React, { useState, useEffect, useRef } from 'react';
+// import './App.css';
+
+// function App() {
+//   const [inputDate, setInputDate] = useState('');
+//   const [eventDate, setEventDate] = useState(null);
+//   const [timeLeft, setTimeLeft] = useState({
+//     days: 0, hours: 0, minutes: 0, seconds: 0
+//   });
+//   const [isActive, setIsActive] = useState(false);
+//   const timerRef = useRef(null);
+
+//   useEffect(() => {
+//     if (!isActive || !eventDate) return;
+//     // start interval
+//     timerRef.current = setInterval(() => {
+//       const now = new Date();
+//       const diff = eventDate - now;
+//       if (diff <= 0) {
+//         clearInterval(timerRef.current);
+//         setIsActive(false);
+//         setTimeLeft({ days:0, hours:0, minutes:0, seconds:0 });
+//       } else {
+//         setTimeLeft({
+//           days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+//           hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+//           minutes: Math.floor((diff / (1000 * 60)) % 60),
+//           seconds: Math.floor((diff / 1000) % 60),
+//         });
+//       }
+//     }, 1000);
+//     return () => clearInterval(timerRef.current);
+//   }, [isActive, eventDate]);
+
+//   const handleStart = () => {
+//     if (!inputDate) return;
+//     const selected = new Date(inputDate);
+//     if (selected <= new Date()) {
+//       alert('Please choose a future date/time');
+//       return;
+//     }
+//     setEventDate(selected);
+//     setIsActive(true);
+//   };
+
+//   const segments = Object.entries(timeLeft).map(([label, val]) => (
+//     <div key={label} className="time-segment">
+//       <span className="time">{val.toString().padStart(2, '0')}</span>
+//       <span className="label">{label}</span>
+//     </div>
+//   ));
+
+//   return (
+//     <div className="App">
+//       <h1>Event Countdown</h1>
+//       <div className="controls">
+//         <input
+//           type="datetime-local"
+//           className="date-input"
+//           value={inputDate}
+//           onChange={e => setInputDate(e.target.value)}
+//         />
+//         <button
+//           className="start-button"
+//           onClick={handleStart}
+//         >Start</button>
+//       </div>
+//       {isActive && (
+//         <div className="timer">
+//           {segments}
+//         </div>
+//       )}
+//       {!isActive && eventDate && (
+//         <div className="expired">Time’s up!</div>
+//       )}
+//     </div>
+//   );
+// }
+
+// export default App;
