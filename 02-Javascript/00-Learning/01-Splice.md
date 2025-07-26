@@ -17,6 +17,28 @@
 | 15 | **Delete item by value**                   | `arr.splice(arr.indexOf(val), 1)`                       | Deletes item if exists            |
 | 16 | **Replace item by value**                  | `arr.splice(arr.indexOf(old), 1, new)`                  | Replaces value                    |
 | 17 | **Remove duplicates**                      | Loop + splice when duplicate found                      | Cleans duplicates                 |
-| 18 | **Remove items conditionally**             | `arr.forEach((v, i) => { if (cond) arr.splice(i, 1) })` | Use with care                     |
-| 19 | **Clear array while preserving reference** | `arr.splice(0, arr.length)`                             | Common in reactive frameworks     |
-| 20 | **Undo last insertion**                    | `arr.splice(insertIndex, insertedCount)`                | Rollback change                   |
+| 18 | **Remove items conditionally**             | `arr.forEach((v, i) => { if (cond) arr.splice(i, 1) })` | Use with care                     
+
+
+
+
+🧹 Array Cleanup
+
+```
+// Remove undefined/nulls
+for (let i = arr.length - 1; i >= 0; i--) {
+  if (arr[i] == null) arr.splice(i, 1);
+}
+```
+
+
+🔀 Reordering Elements
+```
+// Move item from index 1 to 3
+arr.splice(3, 0, arr.splice(1, 1)[0]);
+```
+
+🧪 Immutable Clone (Alternative to slice)
+```
+const newArr = [...arr].splice(2, 2); // Non-destructive subarray
+```
