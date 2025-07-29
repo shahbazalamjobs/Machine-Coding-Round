@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="countdown-container">
+      <h1>Countdown</h1>
+
+      <input type="number" id="input-seconds" placeholder="Enter time in seconds...">
+      <div id="display"></div>
+
+      <div class="action-btns">
+        <button id="startPause">Start</button>
+        <button id="reset">Reset</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+
+    const inputSeconds = document.getElementById('input-seconds');
+    const display = document.getElementById('display');
+    const startPauseBtn = document.getElementById('startPause');
+    const resetBtn = document.getElementById('reset');
+
+    let isRunning = false;
+    let countDownInterval = null;
+    let totalSeconds = 0;
+
+    const formatTime = (total) => {
+      const hours = String(Math.floor((total / 3600))).padStart(2, '0');
+      const minutes = String(Math.floor(((total % 3600)) / 60)).padStart(2, '0');
+      const seconds = String(Math.floor((total % 60))).padStart(2, '0');
+
+      return `${hours}: ${minutes}: ${seconds}`;
+    }
+
+    const updateDisplay = () => {
+      display.textContent = formatTime(totalSeconds);
+    }
+
+    const startTimer = () => {
+      if (totalSeconds <= 0) return;
+
+      if (totalSeconds > 0) {
+        countDownInterval = setInterval(() => {
+
+          if (totalSeconds > 0) {
+            totalSeconds--;
+            updateDisplay();
+          } else {
+            clearInterval(countDownInterval);
+            startPauseBtn.textContent = 'Start';
+            isRunning = false;
+            totalSeconds = 0;
+          }
+
+
+        }, 1000);
+      } else {
+        clearInterval(countDownInterval);
+        startPauseBtn.textContent = 'Start';
+        isRunning = false;
+      }
+    }
+
+    startPauseBtn.addEventListener('click', () => {
+      if (!isRunning) {
+        if (!countDownInterval) {
+          const inputValue = parseInt(inputSeconds.value);
+
+          if (isNaN(inputValue) || inputValue <= 0) {
+            alert('Please enter valid seconds ...')
+            return;
+          }
+
+          totalSeconds = inputValue;
+          updateDisplay()
+        }
+
+        startTimer();
+        startPauseBtn.textContent = 'Pause';
+        isRunning = true;
+      } else {
+        clearInterval(countDownInterval);
+        startPauseBtn.textContent = 'Start';
+        isRunning = false;
+      }
+    });
+
+    resetBtn.addEventListener('click', () => {
+      clearInterval(countDownInterval);
+      countDownInterval = null;
+      totalSeconds = 0;
+      startPauseBtn.textContent = 'Start';
+      isRunning = false;
+      display.textContent = '00:00:00';
+      inputSeconds.value = 0;
+    });
+
+  </script>
+</body>
+
+</html>
