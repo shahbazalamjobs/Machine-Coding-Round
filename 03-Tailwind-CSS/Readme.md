@@ -135,6 +135,3 @@ Use `@apply` in custom CSS to reuse utility classes
 | Customization (`@apply`, config)    | ✅         |
 
 ---
-
-
-If you'd like, I can give you **mock interview questions with Tailwind-based challenges** too. Would you like that?
