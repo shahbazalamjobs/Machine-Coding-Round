@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/styles.css">
+    <title>Document</title>
+</head>
+
+<body class="bg-slate-950">
+
+    <!-- navbar -->
+    <nav class="flex items-center justify-between w-full px-6 py-4 bg-gray-900 shadow-md">
+        <div class="h-10 w-28 cursor-pointer">
+            <img class="h-full w-full object-contain"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/640px-Google_2015_logo.svg.png"
+                alt="logo" />
+        </div>
+
+        <ul class="hidden md:flex items-center gap-6 text-white text-lg">
+            <li><a href="#" class="hover:text-blue-400 transition">Home</a></li>
+            <li><a href="#" class="hover:text-blue-400 transition">About</a></li>
+            <li><a href="#" class="hover:text-blue-400 transition">Contact Us</a></li>
+        </ul>
+
+        <div class="flex items-center gap-4">
+            <button
+                class="hidden md:inline-block cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-medium rounded px-4 py-2 transition">
+                Login / Signup
+            </button>
+
+            <button class="md:hidden cursor-pointer text-white text-2xl hover:text-blue-400 transition"
+                onclick="toggleMenu()">
+                &#9776;
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden bg-gray-800 px-6 py-4 hidden">
+        <ul class="flex flex-col gap-4 text-white text-lg">
+            <li><a href="#" class="hover:text-blue-400 transition">Home</a></li>
+            <li><a href="#" class="hover:text-blue-400 transition">About</a></li>
+            <li><a href="#" class="hover:text-blue-400 transition">Contact Us</a></li>
+            <li><button class="bg-blue-600 hover:bg-blue-700 text-white font-medium rounded px-4 py-2 transition">
+                    Login / Signup
+                </button></li>
+        </ul>
+    </div>
+
+    <!-- hero -->
+    <section class="relative h-[400px] md:h-[600px] overflow-hidden">
+        <img class="md:hidden w-full h-full object-cover absolute z-0 brightness-50"
+            src="https://images.pexels.com/photos/40185/mac-freelancer-macintosh-macbook-40185.jpeg"
+            alt="laptop small" />
+
+        <img class="hidden md:block w-full h-full object-cover absolute z-0 brightness-50"
+            src="https://images.pexels.com/photos/7013100/pexels-photo-7013100.png" alt="laptop full" />
+
+        <div class="absolute bottom-5 left-5 z-10 text-white max-w-[90%] sm:max-w-[70%] md:max-w-[50%]">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">Google, world’s best search engine</h1>
+            <p class="mt-2 text-sm sm:text-base md:text-lg">Search the world's information, including webpages, images,
+                videos and more with Google.</p>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-16 px-6 bg-gray-800 text-white">
+        <h2 class="text-3xl font-bold text-center mb-12">Powerful Features</h2>
+        <div class="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
+            <div class="bg-gray-900 p-6 rounded shadow text-center">
+                <h3 class="text-xl font-semibold mb-2">Fast Performance</h3>
+                <p class="text-gray-400">Optimized algorithms for lightning-fast search results.</p>
+            </div>
+            <div class="bg-gray-900 p-6 rounded shadow text-center">
+                <h3 class="text-xl font-semibold mb-2">Accurate Results</h3>
+                <p class="text-gray-400">Find exactly what you're looking for with advanced filtering.</p>
+            </div>
+            <div class="bg-gray-900 p-6 rounded shadow text-center">
+                <h3 class="text-xl font-semibold mb-2">User-Friendly</h3>
+                <p class="text-gray-400">Simple and intuitive UI designed for all age groups.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="py-16 px-6 bg-slate-900 text-white">
+        <h2 class="text-3xl font-bold text-center mb-12">What Our Users Say</h2>
+        <div class="max-w-5xl mx-auto grid gap-8 md:grid-cols-2">
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <p class="text-gray-300 mb-4">"Google has completely transformed how I search and learn every day!"</p>
+                <p class="text-sm text-gray-500">— Anjali Sharma</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <p class="text-gray-300 mb-4">"Fast, relevant, and always on point. Nothing beats Google!"</p>
+                <p class="text-sm text-gray-500">— Rohan Mehta</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-blue-700 py-12 px-6 text-center text-white">
+        <h2 class="text-3xl font-bold mb-4">Ready to explore with Google?</h2>
+        <p class="mb-6 text-lg">Join millions of users who rely on us every day.</p>
+        <a href="#" class="bg-white text-blue-700 px-6 py-3 rounded font-semibold hover:bg-gray-200 transition">
+            Get Started
+        </a>
+    </section>
+
+
+    <!-- About -->
+    <section class="h-auto w-full flex flex-col">
+        <h2>About Google</h2>
+
+        <div class="h-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            <div class="flex items-center text-center flex-col bg-gray-900 p-5 rounded">
+                <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" alt="User Icon"
+                    class="w-20 h-20 mb-4 rounded-full object-cover">
+                <p class="text-2xl font-semibold text-white">Max Watson, Product Manager</p>
+                <p class="text-xl font-normal text-gray-500">Handles complex tasks with efficiency and expertise.</p>
+            </div>
+
+            <div class="flex items-center text-center flex-col bg-gray-900 p-5 rounded">
+                <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="User Icon"
+                    class="w-20 h-20 mb-4 rounded-full object-cover">
+                <p class="text-2xl font-semibold text-white">Sara Patel, Marketing Lead</p>
+                <p class="text-xl font-normal text-gray-500">Drives brand growth through strategic campaigns and
+                    insights.</p>
+            </div>
+
+            <div class="flex items-center text-center flex-col bg-gray-900 p-5 rounded">
+                <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg" alt="User Icon"
+                    class="w-20 h-20 mb-4 rounded-full object-cover">
+                <p class="text-2xl font-semibold text-white">Daniel Kim, Data Analyst</p>
+                <p class="text-xl font-normal text-gray-500">Transforms data into actionable business intelligence.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black mt-10 p-10">
+        <div class="flex flex-col items-center justify-center max-w-[1000px] mx-auto">
+            <div class="h-10 w-28 cursor-pointer">
+                <img class="h-full w-full object-contain"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/640px-Google_2015_logo.svg.png"
+                    alt="logo">
+            </div>
+
+            <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center mt-8 gap-8">
+                <div class="flex flex-col items-center md:items-start">
+                    <h3 class="text-white font-bold text-xl">About Us</h3>
+                    <div class="w-full border-b-2 max-w-[50px] border-amber-200 h-1"></div>
+                    <ul class="flex flex-col items-center md:items-start mt-4 space-y-2">
+                        <li><a href="#" class="text-decoration-none font-normal text-gray-500 text-md">Our Mission</a>
+                        </li>
+                        <li><a href="#" class="text-decoration-none font-normal text-gray-500 text-md">Our Team</a></li>
+                        <li><a href="#" class="text-decoration-none font-normal text-gray-500 text-md">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col items-center md:items-start">
+                    <h3 class="text-white font-bold text-xl">Services</h3>
+                    <div class="w-full border-b-2 max-w-[50px] border-amber-200 h-1"></div>
+                    <ul class="flex flex-col items-center md:items-start mt-4 space-y-2">
+                        <li><a href="#" class="text-decoration-none font-normal text-gray-500 text-md">Consulting</a>
+                        </li>
+                        <li><a href="#" class="text-decoration-none font-normal text-gray-500 text-md">Development</a>
+                        </li>
+                        <li><a href="#" class="text-decoration-none font-normal text-gray-500 text-md">Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col items-center md:items-start">
+                    <h3 class="text-white font-bold text-xl">Resources</h3>
+                    <div class="w-full border-b-2 max-w-[50px] border-amber-200 h-1"></div>
+                    <ul class="flex flex-col items-center md:items-start mt-4 space-y-2">
+                        <ul class="flex flex-col items-center md:items-start mt-4 space-y-2">
+                            <li><a href="#" class="text-decoration-none font-normal text-gray-500 text-md">Blog</a></li>
+                            <li><a href="#" class="text-decoration-none font-normal text-gray-500 text-md">FAQs</a></li>
+                            <li><a href="#" class="text-decoration-none font-normal text-gray-500 text-md">Privacy
+                                    Policy</a>
+                            </li>
+                        </ul>
+                </div>
+
+                <div class="flex flex-col items-center md:items-start">
+                    <h3 class="text-white font-bold text-xl">Contact</h3>
+                    <div class="w-full border-b-2 max-w-[50px] border-amber-200 h-1"></div>
+                    <ul class="flex flex-col items-center md:items-start mt-4 space-y-2">
+                        <li><a href="#" class="text-decoration-none font-normal text-gray-500 text-md">Email Us</a></li>
+                        <li><a href="#" class="text-decoration-none font-normal text-gray-500 text-md">Live Chat</a>
+                        </li>
+                        <li><a href="#" class="text-decoration-none font-normal text-gray-500 text-md">Location</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("mobile-menu");
+            menu.classList.toggle("hidden");
+        }
+    </script>
+</body>
+
+</html>
