@@ -1,4 +1,4 @@
-Here’s a **Tailwind CSS Notes Guide** based on the **Pareto Principle (80/20 Rule)** — focusing on the 20% of Tailwind that will help you master 80% of frontend tasks and ace frontend interviews.
+**Tailwind CSS Notes Guide** 
 
 ---
 
@@ -136,11 +136,5 @@ Use `@apply` in custom CSS to reuse utility classes
 
 ---
 
-## 📘 Final Interview Tip
-
-> In interviews, don’t just say *"I know Tailwind."*
-> Say: *"I can build responsive layouts, optimize for accessibility, and rapidly style UI components using Tailwind’s utility-first approach. I also customize themes and use responsive variants efficiently."*
-
----
 
 If you'd like, I can give you **mock interview questions with Tailwind-based challenges** too. Would you like that?
