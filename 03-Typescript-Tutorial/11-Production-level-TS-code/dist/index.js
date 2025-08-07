@@ -1,0 +1,2 @@
+console.log("hello typescript is working");
+export {};
