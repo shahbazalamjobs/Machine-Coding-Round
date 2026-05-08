@@ -1,44 +1,95 @@
-//  1
-
+// 1. To open single accordion item
 
 import { useState } from "react";
 
 function Accordion({ data }) {
+  const [activeId, setActiveId] = useState(null);
 
-    const handleClick = (id) => {
-        setActiveIndex(activeIndex === id ? null : id);
-    }
+  const handleClick = (id) => {
+    setActiveId((prev) => (prev === id ? null : id));
+  };
 
-    const [activeIndex, setActiveIndex] = useState(null);
-
-    const accordItem = data.map((item) => (
-        <div className="accord-item"
-            key={item.id}
+  return (
+    <div className="accordion">
+      {data.map((item) => (
+        <div className="accord-item" key={item.id}>
+          <button
+            className="accord-title"
             onClick={() => handleClick(item.id)}
-        >
-            <div className="accord-title">
-                <span>{item.title}</span>
-                <span>{activeIndex === item.id ? '-' : '+'}</span>
-            </div>
-            <div className="accord-info">
-                {activeIndex === item.id ? item.info : null}
-            </div>
-        </div>
-    ));
+          >
+            <span>{item.title}</span>
+            <span>{activeId === item.id ? "-" : "+"}</span>
+          </button>
 
-    return (
-        <div className="accordion">
-            {accordItem}
+          {activeId === item.id && (
+            <div className="accord-info">
+              {item.info}
+            </div>
+          )}
         </div>
-    );
+      ))}
+    </div>
+  );
 }
 
 export default Accordion;
 
 
+// 2 To open multiple accordion items
+
+// main function
+const [activeIds, setActiveIds] = useState([]);
+
+  const handleClick = (id) => {
+    setActiveIds((prev) =>
+      prev.includes(id)
+        ? prev.filter((itemId) => itemId !== id)
+        : [...prev, id]
+    );
+  };
 
 
-// 2
+
+//  3
+
+// import { useState } from "react";
+
+// function Accordion({ data }) {
+
+//     const handleClick = (id) => {
+//         setActiveIndex(activeIndex === id ? null : id);
+//     }
+
+//     const [activeIndex, setActiveIndex] = useState(null);
+
+//     const accordItem = data.map((item) => (
+//         <div className="accord-item"
+//             key={item.id}
+//             onClick={() => handleClick(item.id)}
+//         >
+//             <div className="accord-title">
+//                 <span>{item.title}</span>
+//                 <span>{activeIndex === item.id ? '-' : '+'}</span>
+//             </div>
+//             <div className="accord-info">
+//                 {activeIndex === item.id ? item.info : null}
+//             </div>
+//         </div>
+//     ));
+
+//     return (
+//         <div className="accordion">
+//             {accordItem}
+//         </div>
+//     );
+// }
+
+// export default Accordion;
+
+
+
+
+// 4
 
 // import React, { useState } from 'react';
 // import './styles.css';
