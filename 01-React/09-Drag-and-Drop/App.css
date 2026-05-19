@@ -1,63 +1,55 @@
-/*  1) advance drag and drop  */
+/* App.css */
 
-/* .dnd-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 40px;
-  font-family: sans-serif;
-}
-
-.dnd-list {
-  width: 220px;
-  min-height: 250px;
-  border: 2px dashed #ccc;
-  border-radius: 8px;
-  padding: 16px;
-  background-color: #f9f9f9;
-}
-
-.dnd-list h4 {
-  text-align: center;
-  margin-bottom: 12px;
-}
-
-.dnd-item {
-  padding: 10px 14px;
-  margin-bottom: 10px;
-  background-color: #e0e0e0;
-  border-radius: 6px;
-  cursor: grab;
-  transition: background-color 0.2s;
-}
-
-.dnd-item:hover {
-  background-color: #c0c0c0;
-} */
-
-
-
-
-
-/* 2) Simple Drag and drop */
-
-.dnd-list {
-  width: 300px;
-  margin: 50px auto;
+* {
+  margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  box-sizing: border-box;
 }
 
-.dnd-list-item {
-  padding: 12px 16px;
-  margin-bottom: 8px;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.drag-drop-wrapper {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.container {
   background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  cursor: grab;
-  transition: background 0.2s;
+  padding: 1rem;
+  width: 250px;
+  min-height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.dnd-list-item:hover {
-  background-color: #e0e0e0;
+.container h2 {
+  text-align: center;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.drag-item {
+  user-select: none;
+  padding: 16px;
+  margin-bottom: 10px;
+  background-color: white;
+  border-radius: 8px;
+  cursor: move;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.drag-item:hover {
+  transform: scale(1.02);
+  background-color: #fafafa;
+}
+
+.drag-item.dragging {
+  opacity: 0.5;
 }
